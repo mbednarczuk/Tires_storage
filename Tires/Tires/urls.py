@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView
 
@@ -25,4 +27,4 @@ urlpatterns = [
     url(r'^logout$', Logout.as_view(), name='logout'),
     url(r'^tires_list$', TiresListView.as_view(), name="list"),
     url(r'^tire_search', TireSearchView.as_view(), name='szukaj'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

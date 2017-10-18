@@ -40,6 +40,7 @@ class Tires(models.Model):
     type_of_load = models.IntegerField(choices=LOAD, verbose_name="Load")
     price = models.IntegerField(null=False)
     quantity = models.IntegerField(null=False)
+    image = models.ImageField(upload_to='tire_image', blank=True)
 
     class Meta:
         verbose_name = "Tire"
