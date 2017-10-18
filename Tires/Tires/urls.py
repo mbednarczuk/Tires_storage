@@ -16,6 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^tires$', TiresView.as_view(), name="start"),
+    url(r'^login$', Login.as_view(), name='login'),
+    url(r'^logout$', Logout.as_view(), name='logout'),
+    url(r'^tires_list$', TiresListView.as_view(), name="list"),
+    url(r'^tire_search', TireSearchView.as_view(), name='szukaj'),
 ]

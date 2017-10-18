@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form method="post">
+    {{ form.as_p  }}
+    {% csrf_token %}
+    <input type="submit">
+  </form>
+  {% for tire in tire %}
+
+    <li>Tire's brand: {{ tire.width }}</li>
+    <li>Tire's model: {{ tire.tire_brand }}</li>
+    <li>Tire's size: {{ tire.width}}/{{ tire.aspect_ratio}}/R{{ tire.diameter}}</li>
+    <li>Tire's production date: {{ tire.get_production_month_display }}, {{ tire.production_year }}</li>
+    <li>Season type: {{ tire.get_season_type_display }}</li>
+    <li>Tire's type of load: {{ tire.get_type_of_load_display}}</li>
+    <li>Tire's price: {{ tire.price }}</li>
+    <li>Quantity: {{ tire.quantity }}</li>
+    <br>
+    {% endfor %}
+  <p><a href="{% url 'szukaj' %}">Search again</a></p>
+    <p><a href="{% url 'start' %}">Start page</a></p>
+{% endblock %}
