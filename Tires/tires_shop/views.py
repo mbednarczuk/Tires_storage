@@ -2,14 +2,17 @@ from django.contrib.auth import authenticate, login, logout
 from django.db.models import Q
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.template.loader import get_template
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView
+from django.core.mail import EmailMessage
+from django.template import Context
 
-from .forms import LoginForm, TireSearchForm, NewTireForm
+from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm
 from .models import Tires
 
 
@@ -60,7 +63,61 @@ class TireSearchView(View):
                                         Q(aspect_ratio__icontains=brand) |
                                         Q(diameter__icontains=brand)).distinct()
             return render(request, 'tire_search.html', {'form': form, 'tire': tire})
+
+
 class NewTireView(CreateView):
     form_class = NewTireForm
     template_name = 'new_tire.html'
     success_url = reverse_lazy('start')
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('start')
+    else:
+        form = SignUpForm()
+    return render(request, 'signup.html', {'form': form})
+
+
+def contact(request):
+    form_class = ContactForm
+
+    if request.method == 'POST':
+        form = form_class(data=request.POST)
+
+        if form.is_valid():
+            contact_name = request.POST.get(
+                'contact_name'
+                , '')
+            contact_email = request.POST.get(
+                'contact_email'
+                , '')
+            form_content = request.POST.get('content', '')
+
+            template = get_template('contact_template.txt')
+            ctx = Context({
+                'contact_name': contact_name,
+                'contact_email': contact_email,
+                'form_content': form_content,
+            })
+            content = template.render(ctx)
+
+            email = EmailMessage(
+                "Customer's help request",
+                content,
+                "Tire's website" + '',
+                ["Owner's e-mail"],
+            )
+            email.send()
+            return redirect('contact')
+
+    return render(request, 'contact.html', {
+        'form': form_class,
+    })

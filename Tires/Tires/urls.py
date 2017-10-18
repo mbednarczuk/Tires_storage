@@ -17,8 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from tires_shop import views as views
+from tires_shop import views as core_views
 
 from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView
+
+
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,4 +33,6 @@ urlpatterns = [
     url(r'^tires_list$', TiresListView.as_view(), name="list"),
     url(r'^tire_search', TireSearchView.as_view(), name='szukaj'),
     url(r'^new_tire$', NewTireView.as_view(), name="new"),
+    url(r'^signup/$', core_views.signup, name='signup'),
+    url(r'^contact/$', views.contact, name='contact'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
