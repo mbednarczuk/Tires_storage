@@ -1,5 +1,7 @@
 from django import forms
 
+from tires_shop.models import Tires
+
 
 class LoginForm(forms.Form):
     login = forms.CharField()
@@ -8,3 +10,9 @@ class LoginForm(forms.Form):
 
 class TireSearchForm(forms.Form):
     brand = forms.CharField(label='Search')
+
+
+class NewTireForm(forms.ModelForm):
+    class Meta:
+        model = Tires
+        fields = '__all__'

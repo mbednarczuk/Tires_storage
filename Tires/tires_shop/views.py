@@ -5,9 +5,11 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template.response import TemplateResponse
 from django.urls import reverse
+from django.urls import reverse_lazy
 from django.views import View
+from django.views.generic import CreateView
 
-from .forms import LoginForm, TireSearchForm
+from .forms import LoginForm, TireSearchForm, NewTireForm
 from .models import Tires
 
 
@@ -58,3 +60,7 @@ class TireSearchView(View):
                                         Q(aspect_ratio__icontains=brand) |
                                         Q(diameter__icontains=brand)).distinct()
             return render(request, 'tire_search.html', {'form': form, 'tire': tire})
+class NewTireView(CreateView):
+    form_class = NewTireForm
+    template_name = 'new_tire.html'
+    success_url = reverse_lazy('start')

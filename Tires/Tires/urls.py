@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView
+from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^logout$', Logout.as_view(), name='logout'),
     url(r'^tires_list$', TiresListView.as_view(), name="list"),
     url(r'^tire_search', TireSearchView.as_view(), name='szukaj'),
+    url(r'^new_tire$', NewTireView.as_view(), name="new"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
