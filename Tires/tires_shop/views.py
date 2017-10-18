@@ -11,6 +11,8 @@ from django.views import View
 from django.views.generic import CreateView
 from django.core.mail import EmailMessage
 from django.template import Context
+from django.views.generic import DeleteView
+from django.views.generic import UpdateView
 
 from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm
 from .models import Tires
@@ -121,3 +123,17 @@ def contact(request):
     return render(request, 'contact.html', {
         'form': form_class,
     })
+
+
+class TireUpdate(UpdateView):
+    model = Tires
+    template_name = 'update_tire.html'
+    success_url = reverse_lazy('list')
+    fields = ['width', 'aspect_ratio', 'diameter', 'tire_brand', 'tire_model', 'production_month', 'production_year',
+              'season_type', 'type_of_load', 'price', 'quantity', 'image']
+
+
+class TireDelete(DeleteView):
+    model = Tires
+    template_name = 'delete_tire.html'
+    success_url = reverse_lazy('list')

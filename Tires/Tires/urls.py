@@ -35,4 +35,11 @@ urlpatterns = [
     url(r'^new_tire$', NewTireView.as_view(), name="new"),
     url(r'^signup/$', core_views.signup, name='signup'),
     url(r'^contact/$', views.contact, name='contact'),
+    url(r'^edit/(?P<pk>\d+)$', views.TireUpdate.as_view(), name='tire_edit'),
+    url(r'^delete/(?P<pk>\d+)$', views.TireDelete.as_view(), name='tire_delete'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# edycja, layout, zamówienia,
+
+
+
