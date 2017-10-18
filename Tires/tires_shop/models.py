@@ -48,3 +48,8 @@ class Tires(models.Model):
 
     def __str__(self):
         return ' '.join([self.tire_brand, self.tire_model])
+
+# class Order(models.Model):
+#     tire = models.ForeignKey(Tires, verbose_name="order_tire")
+#     quantity = models.DecimalField(max_digits=5, decimal_places=0)
+#     user = models.ManyToManyField(User)

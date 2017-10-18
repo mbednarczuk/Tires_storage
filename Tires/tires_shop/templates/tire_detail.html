@@ -1,0 +1,14 @@
+    <li>Tire's brand: {{ tires.width }}</li>
+    <li>Tire's model: {{ tires.tire_brand }}</li>
+    <li>Tire's size: {{ tires.width}}/{{ tire.aspect_ratio}}/R{{ tire.diameter}}</li>
+    <li>Tire's production date: {{ tires.get_production_month_display }}, {{ tires.production_year }}</li>
+    <li>Season type: {{ tires.get_season_type_display }}</li>
+    <li>Tire's type of load: {{ tires.get_type_of_load_display}}</li>
+    <li>Tire's price: {{ tires.price }}</li>
+    <li>Quantity: {{ tires.quantity }}</li>
+    {% if tires.image %}
+        <img src="{{ tires.image.url }}" width="100" height="100">
+    {% else %}
+        No photo added
+    {% endif %}
+

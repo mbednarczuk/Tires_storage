@@ -20,10 +20,8 @@ from django.conf.urls.static import static
 from tires_shop import views as views
 from tires_shop import views as core_views
 
-from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView
-
-
-
+from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView, TireDetailView, \
+    ChangePasswordView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -37,9 +35,6 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^edit/(?P<pk>\d+)$', views.TireUpdate.as_view(), name='tire_edit'),
     url(r'^delete/(?P<pk>\d+)$', views.TireDelete.as_view(), name='tire_delete'),
+    url(r'^tire/(?P<pk>(\d)+)', TireDetailView.as_view()),
+    url(r'^reset_password/(?P<user_id>(\d)+)', ChangePasswordView.as_view()),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# edycja, layout, zamówienia,
-
-
-

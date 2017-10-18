@@ -1,4 +1,6 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.models import User
 from django.db.models import Q
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -12,9 +14,10 @@ from django.views.generic import CreateView
 from django.core.mail import EmailMessage
 from django.template import Context
 from django.views.generic import DeleteView
+from django.views.generic import DetailView
 from django.views.generic import UpdateView
 
-from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm
+from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm, ChangePasswordForm
 from .models import Tires
 
 
@@ -45,12 +48,12 @@ class Logout(View):
         return HttpResponseRedirect(reverse('login'))
 
 
-class TiresListView(View):
+class TiresListView(LoginRequiredMixin, View):
     def get(self, request):
         return TemplateResponse(request, 'tires.html')
 
 
-class TireSearchView(View):
+class TireSearchView(LoginRequiredMixin, View):
     def get(self, request):
         form = TireSearchForm()
         return render(request, 'tire_search.html', {'form': form})
@@ -67,7 +70,7 @@ class TireSearchView(View):
             return render(request, 'tire_search.html', {'form': form, 'tire': tire})
 
 
-class NewTireView(CreateView):
+class NewTireView(LoginRequiredMixin, CreateView):
     form_class = NewTireForm
     template_name = 'new_tire.html'
     success_url = reverse_lazy('start')
@@ -125,7 +128,7 @@ def contact(request):
     })
 
 
-class TireUpdate(UpdateView):
+class TireUpdate(LoginRequiredMixin, UpdateView):
     model = Tires
     template_name = 'update_tire.html'
     success_url = reverse_lazy('list')
@@ -133,7 +136,43 @@ class TireUpdate(UpdateView):
               'season_type', 'type_of_load', 'price', 'quantity', 'image']
 
 
-class TireDelete(DeleteView):
+class TireDelete(LoginRequiredMixin, DeleteView):
     model = Tires
     template_name = 'delete_tire.html'
     success_url = reverse_lazy('list')
+
+
+class TireDetailView(DetailView):
+    model = Tires
+    template_name = 'tire_detail.html'
+
+
+class ChangePasswordView(PermissionRequiredMixin, View):
+    permission_required = 'change_user'
+
+    def get(self, request, user_id):
+        form = ChangePasswordForm()
+        return render(request, "change_password.html", {"form": form})
+
+    def post(self, request, user_id):
+        form = ChangePasswordForm(request.POST)
+        if form.is_valid():
+            user = User.objects.get(user_id)
+            # user = authenticate(
+            #     username = user.username,
+            #     password = form.cleaned_data['old_password']
+            # )
+
+            if not user.check_password(form.cleaned_data['old_password']):
+                return HttpResponse("Wrong password!")
+
+            if user is None:
+                return HttpResponseRedirect("Klops")
+
+            if form.cleaned_data['new_password'] != form.cleaned_data["new_password_2"]:
+                return HttpResponse("Success!")
+
+# class OrderView(LoginRequiredMixin, CreateView):
+#     form_class = OrderForm
+#     template_name = "order.html"
+#     success_url = reverse_lazy("start")
