@@ -46,6 +46,8 @@ class BrandsDescribe(models.Model):
         verbose_name = "Brand"
         verbose_name_plural = "Brands"
 
+    def __str__(self):
+        return ' '.join([self.brand_name])
 
 class Tires(models.Model):
     width = models.IntegerField(null=False)

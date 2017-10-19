@@ -26,6 +26,16 @@ class TiresView(View):
         return render(request, 'base.html')
 
 
+class OwnerView(View):
+    def get(self, request):
+        return render(request, 'owner.html')
+
+
+class ClientView(View):
+    def get(self, request):
+        return render(request, 'client.html')
+
+
 class Login(View):
     def get(self, request):
         form = LoginForm()
@@ -142,6 +152,12 @@ class TireDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('list')
 
 
+class OrderDelete(LoginRequiredMixin, DeleteView):
+    model = Order
+    template_name = 'delete_order.html'
+    success_url = reverse_lazy('all_orders')
+
+
 class TireDetailView(DetailView):
     model = Tires
     template_name = 'tire_detail.html'
@@ -201,8 +217,3 @@ class OrderView(LoginRequiredMixin, View):
 class AllOrders(View):
     def get(self, request):
         return TemplateResponse(request, 'all_orders.html')
-
-class OrderDelete(LoginRequiredMixin, DeleteView):
-    model = Order
-    template_name = 'delete_order.html'
-    success_url = reverse_lazy('all_orders')

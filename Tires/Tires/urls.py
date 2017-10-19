@@ -21,7 +21,7 @@ from tires_shop import views as views
 from tires_shop import views as core_views
 
 from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView, TireDetailView, \
-    ChangePasswordView, OrderView, AllOrders, OrderDelete
+    ChangePasswordView, OrderView, AllOrders, OrderDelete, OwnerView, ClientView
 
 urlpatterns = [
                   url(r'^admin/', admin.site.urls),
@@ -33,11 +33,15 @@ urlpatterns = [
                   url(r'^add$', NewTireView.as_view(), name="new"),
                   url(r'^signup/$', core_views.signup, name='signup'),
                   url(r'^contact/$', views.contact, name='contact'),
+                  url(r'^order$', OrderView.as_view(), name='order'),
+                  url(r'^all_orders$', AllOrders.as_view(), name='all_orders'),
+                  url(r'^owner$', OwnerView.as_view(), name="owner_start"),
+                  url(r'^client$', ClientView.as_view(), name="client_start"),
+
+                  url(r'^delete_order/(?P<pk>(\d)+)', OrderDelete.as_view(), name='order_delete'),
                   url(r'^edit/(?P<pk>\d+)$', views.TireUpdate.as_view(), name='tire_edit'),
                   url(r'^delete/(?P<pk>\d+)$', views.TireDelete.as_view(), name='tire_delete'),
-                  url(r'^tire/(?P<pk>(\d)+)', TireDetailView.as_view()),
-                  url(r'^reset_password/(?P<user_id>(\d)+)', ChangePasswordView.as_view()),
-                  url(r'^order', OrderView.as_view(), name='order'),
-                  url(r'^all_orders', AllOrders.as_view(), name='all_orders'),
-                  url(r'^delete_order/(?P<pk>(\d)+)', OrderDelete.as_view(), name='order_delete'),
+                  url(r'^tire/(?P<pk>(\d)+)', TireDetailView.as_view(), name='tire_detail'),
+                  url(r'^reset_password/(?P<user_id>(\d)+)', ChangePasswordView.as_view(), name='change_password'),
+
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

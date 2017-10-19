@@ -2,10 +2,12 @@
 
 <html>
     <head>
+    {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <meta charset="utf-8"></head>
     <body>
 
-        <h6>{{ date }}</h6>
+        <h4>{{ date }}</h4>
         <h1>Tires</h1>
             {% block content %} {% endblock %}
 
@@ -17,8 +19,9 @@
             {% else %}
                 <p><a href="{% url 'login' %}">Login</a></p>
             {% endif %}
-              <p><a href="{% url 'szukaj' %}">Search</a></p>
-              <p><a href="{% url 'list' %}">The whole stock</a></p>
+            <h2>If You have any doubts feel free to ask : </h2>
+            <p><a href="{% url 'contact' %}"> Contact </a> </p>
+
         </footer>
     </body>
 </html>

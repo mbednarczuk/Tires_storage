@@ -4,18 +4,22 @@
   {% for tire in tires %}
 
     <li>Tire's brand: {{ tire.width }}</li>
-    <li>Tire's model: {{ tire.tire_brand }}</li>
+
     <li>Tire's size: {{ tire.width}}/{{ tire.aspect_ratio}}/R{{ tire.diameter}}</li>
-    <li>Tire's production date: {{ tire.get_production_month_display }}, {{ tire.production_year }}</li>
+
     <li>Season type: {{ tire.get_season_type_display }}</li>
-    <li>Tire's type of load: {{ tire.get_type_of_load_display}}</li>
-    <li>Tire's price: {{ tire.price }}</li>
-    <li>Quantity: {{ tire.quantity }}</li>
+
+
+
     {% if tire.image %}
         <img src="{{ tire.image.url }}" width="100" height="100">
     {% else %}
         No photo added
     {% endif %}
+
+    <p><a href="{% url 'tire_delete' tire.id %}"> Delete </a> </p>
+    <p><a href="{% url 'tire_edit' tire.id %}"> Edit </a> </p>
+    <p><a href="{% url 'tire_detail' tire.id %}"> Detail </a> </p>
 
     <br>
 ...........................................................

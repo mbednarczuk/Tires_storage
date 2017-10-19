@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>Are You sure to delete this product?</h1>
   <form method="post">
     {{ form.as_p }}
     {% csrf_token %}

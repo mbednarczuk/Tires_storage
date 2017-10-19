@@ -1,12 +1,31 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta charset="utf-8"></head>
+    <body>
+
+        <h4>{{ date }}</h4>
+        <h1>Tires</h1>
+            <h3>Fell free to call us durring working hours. Contact form is available all the time.</h3>
+            <h1>Ask us</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <button type="submit">Send</button>
+            </form>
+
+        <footer>
+
+            {% if request.user.is_authenticated %}
+                <p>Hello {{request.user.username}}</p>
+                <p><a href="{% url 'logout' %}">Logout</a></p>
+            {% else %}
+                <p><a href="{% url 'login' %}">Login</a></p>
+            {% endif %}
+            <p><a href="{% url 'client_start' %}"> Back </a></p>
 
 
-{% block content %}
-<h3>Fell free to call us durring working hours. Contact form is available all the time.</h3>
-<h1>Ask us</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Send</button>
-</form>
-{% endblock %}
+        </footer>
+    </body>
+</html>

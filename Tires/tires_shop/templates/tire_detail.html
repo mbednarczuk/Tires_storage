@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
     <li>Tire's brand: {{ tires.width }}</li>
     <li>Tire's model: {{ tires.tire_brand }}</li>
     <li>Tire's size: {{ tires.width}}/{{ tire.aspect_ratio}}/R{{ tire.diameter}}</li>
@@ -11,4 +14,4 @@
     {% else %}
         No photo added
     {% endif %}
-
+{% endblock %}

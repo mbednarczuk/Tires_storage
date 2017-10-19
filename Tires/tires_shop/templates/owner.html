@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+              <p><a href="{% url 'szukaj' %}">Search</a></p>
+              <p><a href="{% url 'order' %}"> New order </a> </p>
+              <p><a href="{% url 'list' %}">The whole stock</a></p>
+              <p><a href="{% url 'all_orders' %}"> Order's list </a> </p>
+              <p><a href="{% url 'new' %}"> New tire </a> </p>
+{% endblock %}
+
