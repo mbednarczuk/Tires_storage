@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 from tires_shop import views as views
 from tires_shop import views as core_views
 
-from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView, TireDetailView, \
-    ChangePasswordView, OrderView, AllOrders, OrderDelete, OwnerView, ClientView
+from tires_shop.views import (TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView, TireDetailView,
+    ChangePasswordView, OrderView, AllOrders, OrderDelete, OwnerView, ClientView, BrandsDescribeDetailView)
 
 urlpatterns = [
                   url(r'^admin/', admin.site.urls),
@@ -43,5 +43,6 @@ urlpatterns = [
                   url(r'^delete/(?P<pk>\d+)$', views.TireDelete.as_view(), name='tire_delete'),
                   url(r'^tire/(?P<pk>(\d)+)', TireDetailView.as_view(), name='tire_detail'),
                   url(r'^reset_password/(?P<user_id>(\d)+)', ChangePasswordView.as_view(), name='change_password'),
+                  url(r'^brand_detail/(?P<pk>(\d)+)', BrandsDescribeDetailView.as_view(), name='brand_detail'),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

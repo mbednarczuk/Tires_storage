@@ -18,7 +18,7 @@ from django.views.generic import DetailView
 from django.views.generic import UpdateView
 
 from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm, ChangePasswordForm, OrderForm
-from .models import Tires, Order
+from .models import Tires, Order, BrandsDescribe
 
 
 class TiresView(View):
@@ -161,6 +161,10 @@ class OrderDelete(LoginRequiredMixin, DeleteView):
 class TireDetailView(DetailView):
     model = Tires
     template_name = 'tire_detail.html'
+
+class BrandsDescribeDetailView(DetailView):
+    model = BrandsDescribe
+    template_name = 'brand_describe.html'
 
 
 class ChangePasswordView(PermissionRequiredMixin, View):

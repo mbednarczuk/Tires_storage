@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <li>Brand: {{ describe.brand_name }}</li>
+    <li>Brand's origin country: {{ describe.origin_country }}</li>
+    <li>Brand's owner: {{ describe.company}}</li>
+    <li>Brand's price type: {{ describe.get_price_group_display }}</li>
+    <li>Brand's fact's: {{ describe.describe }}</li>
+
+
+{% endblock %}
+
+
+

@@ -6,8 +6,7 @@ from .models import Tires, BrandsDescribe, Order
 def my_cp(request):
     ctx = {
         'date': datetime.datetime.now(),
-        'tires': Tires.objects.all(),
-        'describe': BrandsDescribe.objects.all(),
+
     }
     return ctx
 
