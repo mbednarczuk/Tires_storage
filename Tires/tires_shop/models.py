@@ -54,7 +54,7 @@ class Tires(models.Model):
         verbose_name_plural = "Tires"
 
     def __str__(self):
-        return ' '.join([self.tire_brand, self.tire_model])
+        return ' '.join([self.tire_brand])
 
 
 class BrandsDescribe(models.Model):
@@ -68,7 +68,11 @@ class BrandsDescribe(models.Model):
         verbose_name = "Brand"
         verbose_name_plural = "Brands"
 
-# class Order(models.Model):
-#     tire = models.ForeignKey(Tires, verbose_name="order_tire")
-#     quantity = models.DecimalField(max_digits=5, decimal_places=0)
-#     user = models.ManyToManyField(User)
+
+class Order(models.Model):
+    order_tire = models.ForeignKey(Tires, verbose_name="order_tire")
+    quantity = models.DecimalField(max_digits=5, decimal_places=0)
+    user = models.ForeignKey(User)
+
+    def __str__(self):
+        return ' '.join([self.user])

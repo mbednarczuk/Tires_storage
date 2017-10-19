@@ -17,8 +17,8 @@ from django.views.generic import DeleteView
 from django.views.generic import DetailView
 from django.views.generic import UpdateView
 
-from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm, ChangePasswordForm
-from .models import Tires
+from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm, ChangePasswordForm, OrderForm
+from .models import Tires, Order
 
 
 class TiresView(View):
@@ -167,12 +167,37 @@ class ChangePasswordView(PermissionRequiredMixin, View):
                 return HttpResponse("Wrong password!")
 
             if user is None:
-                return HttpResponseRedirect("Klops")
+                return HttpResponseRedirect("Error")
 
             if form.cleaned_data['new_password'] != form.cleaned_data["new_password_2"]:
                 return HttpResponse("Success!")
 
-# class OrderView(LoginRequiredMixin, CreateView):
-#     form_class = OrderForm
-#     template_name = "order.html"
-#     success_url = reverse_lazy("start")
+
+class OrderView(LoginRequiredMixin, View):
+    def get(self, request):
+        form = OrderForm()
+        tire = Tires.objects.get
+        return render(request, "order.html", {"form": form, "tire": tire})
+
+    def post(self, request):
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order_tire = form.cleaned_data['order_tire']
+            quantity = form.cleaned_data['quantity']
+            user = request.user
+
+            Order.objects.create(
+                order_tire=order_tire,
+                quantity=quantity,
+                user=user,
+
+            )
+            url = reverse("all_orders")
+            return HttpResponseRedirect(url)
+        else:
+            return render(request, "all_orders.html", {'form': form})
+
+
+class AllOrders(View):
+    def get(self, request):
+        return TemplateResponse(request, 'all_orders.html')

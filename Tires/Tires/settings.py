@@ -61,7 +61,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'tires_shop.context_processors.tires_context'
+                'tires_shop.context_processors.my_cp',
+                'tires_shop.context_processors.tires_context',
+                'tires_shop.context_processors.describe_context',
+                'tires_shop.context_processors.orders_context'
             ],
         },
     },

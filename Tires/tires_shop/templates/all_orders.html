@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for order in orders %}
+
+    <li>Nazwa produktu:{{ order.order_tire }}</li>
+    <li>Zamówiona ilość:{{ order.quantity}}</li>
+    <li>Zamówione dla: {{ order.user.username }}</li>
+    <br>
+
+  {% endfor %}
+
+    <p><a href="{% url "order" %}"> New order </a> </p>
+
+
+{% endblock %}

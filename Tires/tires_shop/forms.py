@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from tires_shop.models import Tires
+from tires_shop.models import Tires, Order
 
 
 class LoginForm(forms.Form):
@@ -47,7 +47,8 @@ class ChangePasswordForm(forms.Form):
     new_password = forms.CharField(widget=forms.PasswordInput())
     new_password_2 = forms.CharField(widget=forms.PasswordInput())
 
-# class OrderForm(forms.ModelForm):
-#     class Meta:
-#         model = Order
-#         fields = '_all_'
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ('order_tire', 'quantity')
