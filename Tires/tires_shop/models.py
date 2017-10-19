@@ -27,6 +27,13 @@ MONTH = (
     (12, "December"),
 )
 
+PRICE_GROUP = (
+    (1, "budget"),
+    (2, "middle"),
+    (3, "premium"),
+    (4, "other"),
+)
+
 
 class Tires(models.Model):
     width = models.IntegerField(null=False)
@@ -48,6 +55,18 @@ class Tires(models.Model):
 
     def __str__(self):
         return ' '.join([self.tire_brand, self.tire_model])
+
+
+class BrandsDescribe(models.Model):
+    brand_name = models.ForeignKey(Tires)
+    origin_country = models.CharField(max_length=256)
+    company = models.CharField(max_length=256)
+    price_group = models.IntegerField(choices=PRICE_GROUP, verbose_name="Price group")
+    describe = models.TextField()
+
+    class Meta:
+        verbose_name = "Brand"
+        verbose_name_plural = "Brands"
 
 # class Order(models.Model):
 #     tire = models.ForeignKey(Tires, verbose_name="order_tire")
