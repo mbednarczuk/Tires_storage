@@ -201,3 +201,8 @@ class OrderView(LoginRequiredMixin, View):
 class AllOrders(View):
     def get(self, request):
         return TemplateResponse(request, 'all_orders.html')
+
+class OrderDelete(LoginRequiredMixin, DeleteView):
+    model = Order
+    template_name = 'delete_order.html'
+    success_url = reverse_lazy('all_orders')

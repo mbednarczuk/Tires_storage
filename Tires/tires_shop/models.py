@@ -35,11 +35,23 @@ PRICE_GROUP = (
 )
 
 
+class BrandsDescribe(models.Model):
+    brand_name = models.CharField(max_length=256)
+    origin_country = models.CharField(max_length=256)
+    company = models.CharField(max_length=256)
+    price_group = models.IntegerField(choices=PRICE_GROUP, verbose_name="Price group")
+    describe = models.TextField()
+
+    class Meta:
+        verbose_name = "Brand"
+        verbose_name_plural = "Brands"
+
+
 class Tires(models.Model):
     width = models.IntegerField(null=False)
     aspect_ratio = models.IntegerField(null=False)
     diameter = models.IntegerField(null=False)
-    tire_brand = models.CharField(max_length=256)
+    tire_brand = models.ForeignKey(BrandsDescribe)
     tire_model = models.CharField(max_length=256)
     production_month = models.IntegerField(choices=MONTH, verbose_name="Month")
     production_year = models.IntegerField(null=False)
@@ -53,20 +65,8 @@ class Tires(models.Model):
         verbose_name = "Tire"
         verbose_name_plural = "Tires"
 
-    def __str__(self):
-        return ' '.join([self.tire_brand])
-
-
-class BrandsDescribe(models.Model):
-    brand_name = models.ForeignKey(Tires)
-    origin_country = models.CharField(max_length=256)
-    company = models.CharField(max_length=256)
-    price_group = models.IntegerField(choices=PRICE_GROUP, verbose_name="Price group")
-    describe = models.TextField()
-
-    class Meta:
-        verbose_name = "Brand"
-        verbose_name_plural = "Brands"
+        # def __str__(self):
+        #     return ' '.join([self.tire_brand])
 
 
 class Order(models.Model):
@@ -74,5 +74,5 @@ class Order(models.Model):
     quantity = models.DecimalField(max_digits=5, decimal_places=0)
     user = models.ForeignKey(User)
 
-    def __str__(self):
-        return ' '.join([self.user])
+    # def __str__(self):
+    #     return ' '.join([self.user])

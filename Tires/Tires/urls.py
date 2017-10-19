@@ -21,7 +21,7 @@ from tires_shop import views as views
 from tires_shop import views as core_views
 
 from tires_shop.views import TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView, TireDetailView, \
-    ChangePasswordView, OrderView, AllOrders
+    ChangePasswordView, OrderView, AllOrders, OrderDelete
 
 urlpatterns = [
                   url(r'^admin/', admin.site.urls),
@@ -39,4 +39,5 @@ urlpatterns = [
                   url(r'^reset_password/(?P<user_id>(\d)+)', ChangePasswordView.as_view()),
                   url(r'^order', OrderView.as_view(), name='order'),
                   url(r'^all_orders', AllOrders.as_view(), name='all_orders'),
+                  url(r'^delete_order/(?P<pk>(\d)+)', OrderDelete.as_view(), name='order_delete'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
