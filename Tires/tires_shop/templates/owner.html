@@ -2,9 +2,14 @@
 
 {% block content %}
               <p><a href="{% url 'szukaj' %}">Search</a></p>
+              <h3>Orders</h3>
               <p><a href="{% url 'order' %}"> New order </a> </p>
-              <p><a href="{% url 'list' %}">The whole stock</a></p>
               <p><a href="{% url 'all_orders' %}"> Order's list </a> </p>
+
+              <h3>Tires</h3>
+              <p><a href="{% url 'list' %}">The whole stock</a></p>
               <p><a href="{% url 'new' %}"> New tire </a> </p>
+              <h3>Brands</h3>
+              <p><a href="{% url 'add_brand' %}"> New brand </a> </p>
 {% endblock %}
 

@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from tires_shop.models import Tires, Order
+from tires_shop.models import Tires, Order, BrandsDescribe
 
 
 class LoginForm(forms.Form):
@@ -20,10 +20,16 @@ class NewTireForm(forms.ModelForm):
         fields = '__all__'
 
 
+class NewBrandForm(forms.ModelForm):
+    class Meta:
+        model = BrandsDescribe
+        fields = '__all__'
+
+
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
-    email = forms.EmailField(max_length=254, help_text='Required. Inform a valid email address.')
+    first_name = forms.CharField(max_length=30, required=False, help_text='You do not have to, but It would be nice.')
+    last_name = forms.CharField(max_length=30, required=False, help_text='You do not have to, but It would be nice.')
+    email = forms.EmailField(max_length=254, help_text='This what we really need :)')
 
     class Meta:
         model = User

@@ -17,7 +17,8 @@ from django.views.generic import DeleteView
 from django.views.generic import DetailView
 from django.views.generic import UpdateView
 
-from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm, ChangePasswordForm, OrderForm
+from .forms import LoginForm, TireSearchForm, NewTireForm, SignUpForm, ContactForm, ChangePasswordForm, OrderForm, \
+    NewBrandForm
 from .models import Tires, Order, BrandsDescribe
 
 
@@ -74,7 +75,7 @@ class TireSearchView(LoginRequiredMixin, View):
             brand = form.cleaned_data['brand']
             tire = Tires.objects.filter(Q(price__icontains=brand) |
                                         Q(width__icontains=brand) |
-                                        Q(tire_brand__icontains=brand) |
+                                        Q(tire_brand__brand_name__icontains=brand) |
                                         Q(aspect_ratio__icontains=brand) |
                                         Q(diameter__icontains=brand)).distinct()
             return render(request, 'tire_search.html', {'form': form, 'tire': tire})
@@ -83,7 +84,13 @@ class TireSearchView(LoginRequiredMixin, View):
 class NewTireView(LoginRequiredMixin, CreateView):
     form_class = NewTireForm
     template_name = 'new_tire.html'
-    success_url = reverse_lazy('start')
+    success_url = reverse_lazy('owner_start')
+
+
+class NewBrandView(LoginRequiredMixin, CreateView):
+    form_class = NewBrandForm
+    template_name = 'new_brand.html'
+    success_url = reverse_lazy('owner_start')
 
 
 def signup(request):
@@ -196,7 +203,7 @@ class ChangePasswordView(PermissionRequiredMixin, View):
 class OrderView(LoginRequiredMixin, View):
     def get(self, request):
         form = OrderForm()
-        tire = Tires.objects.get
+        tire = Tires.objects.all()
         return render(request, "order.html", {"form": form, "tire": tire})
 
     def post(self, request):

@@ -1,7 +1,15 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 
-{% block content %}
-  <h2>Sign up</h2>
+<html>
+    <head>
+    {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+    <meta charset="utf-8"></head>
+    <body>
+
+        <h4>{{ date }}</h4>
+        <h1>Tires</h1>
+              <h2>Sign up</h2>
   <form method="post">
     {% csrf_token %}
     {% for field in form %}
@@ -18,4 +26,12 @@
     {% endfor %}
     <button type="submit">Sign up</button>
   </form>
-{% endblock %}
+
+        <footer>
+
+            <h2>If You have any doubts feel free to ask : </h2>
+            <p><a href="{% url 'contact' %}"> Contact </a> </p>
+
+        </footer>
+    </body>
+</html>

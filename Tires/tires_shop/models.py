@@ -67,14 +67,18 @@ class Tires(models.Model):
         verbose_name = "Tire"
         verbose_name_plural = "Tires"
 
-        # def __str__(self):
-        #     return ' '.join([self.tire_brand])
+    @property
+    def size(self):
+        return "{}/{}R{}".format(self.width, self.aspect_ratio, self.diameter )
+
+    def __str__(self):
+        return self.size
 
 
 class Order(models.Model):
-    order_tire = models.ForeignKey(Tires, verbose_name="order_tire")
+    order_tire = models.ForeignKey(Tires, verbose_name="Tire to order:")
     quantity = models.DecimalField(max_digits=5, decimal_places=0)
     user = models.ForeignKey(User)
 
     # def __str__(self):
-    #     return ' '.join([self.user])
+    #     return ' '.join([self.size])
