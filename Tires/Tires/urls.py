@@ -21,7 +21,8 @@ from tires_shop import views as views
 from tires_shop import views as core_views
 
 from tires_shop.views import (TiresView, Login, Logout, TiresListView, TireSearchView, NewTireView, TireDetailView,
-                              ChangePasswordView, OrderView, AllOrders, OrderDelete, OwnerView, ClientView, BrandsDescribeDetailView,
+                              ChangePasswordView, OrderView, AllOrders, OrderDelete, OwnerView, ClientView,
+                              BrandsDescribeDetailView,
                               NewBrandView)
 
 urlpatterns = [
@@ -29,7 +30,7 @@ urlpatterns = [
                   url(r'^tires$', TiresView.as_view(), name="start"),
                   url(r'^login$', Login.as_view(), name='login'),
                   url(r'^logout$', Logout.as_view(), name='logout'),
-                  url(r'^tires_list$', TiresListView.as_view(), name="list"),
+                  url(r'^tires_list$', TiresListView.as_view(), name='list'),
                   url(r'^tire_search', TireSearchView.as_view(), name='szukaj'),
                   url(r'^add$', NewTireView.as_view(), name="new"),
                   url(r'^signup/$', core_views.signup, name='signup'),
@@ -38,7 +39,7 @@ urlpatterns = [
                   url(r'^all_orders$', AllOrders.as_view(), name='all_orders'),
                   url(r'^owner$', OwnerView.as_view(), name="owner_start"),
                   url(r'^client$', ClientView.as_view(), name="client_start"),
-                    url(r'^add_brand$', NewBrandView.as_view(), name="add_brand"),
+                  url(r'^add_brand$', NewBrandView.as_view(), name="add_brand"),
 
                   url(r'^delete_order/(?P<pk>(\d)+)', OrderDelete.as_view(), name='order_delete'),
                   url(r'^edit/(?P<pk>\d+)$', views.TireUpdate.as_view(), name='tire_edit'),

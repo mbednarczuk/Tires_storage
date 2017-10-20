@@ -169,6 +169,7 @@ class TireDetailView(DetailView):
     model = Tires
     template_name = 'tire_detail.html'
 
+
 class BrandsDescribeDetailView(DetailView):
     model = BrandsDescribe
     template_name = 'brand_describe.html'

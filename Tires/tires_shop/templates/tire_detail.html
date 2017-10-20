@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+    Tire detail:
     <li>Tire's brand: {{ tires.width }}</li>
     <li>Tire's model: {{ tires.tire_brand }}</li>
-    <li>Tire's size: {{ tires.width}}/{{ tire.aspect_ratio}}/R{{ tire.diameter}}</li>
+    <li>Tire's size: {{ tires.width}}/{{ tires.aspect_ratio}}/R{{ tires.diameter}}</li>
     <li>Tire's production date: {{ tires.get_production_month_display }}, {{ tires.production_year }}</li>
     <li>Season type: {{ tires.get_season_type_display }}</li>
     <li>Tire's type of load: {{ tires.get_type_of_load_display}}</li>
@@ -14,4 +15,11 @@
     {% else %}
         No photo added
     {% endif %}
+
+    <br>Brand detail:
+    <li>Origin country: {{ tires.tire_brand.origin_country }}</li>
+    <li>Brand's owner: {{ tires.tire_brand.company }}</li>
+    <li>Price group: {{ tires.tire_brand.get_price_group_display }}</li>
+    <li>Describe: {{ tires.tire_brand.describe }}</li>
+
 {% endblock %}
