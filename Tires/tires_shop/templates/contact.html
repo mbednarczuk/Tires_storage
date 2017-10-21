@@ -3,31 +3,61 @@
 <html>
     <head>
     {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
-    <meta charset="utf-8"></head>
-    <body>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        <h4>{{ date }}</h4>
-        <h1>Tires</h1>
+
+    <meta charset="utf-8"></head>
+    <body class="mainImage">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Client Panel</a>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+              <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}"> Contact </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'client_start' %}">Client area</a> </li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'owner_start' %}">Owner area</a> </li>
+          </ul>
+
+
+          <form class="form-inline my-2 my-lg-0">
+              <li class="nav-item logout"><a class="nav-link" href="{% url 'logout' %}">Logout</a> </li>
+    </form>
+          </div>
+        </nav>
+        <section class="container">
+           <div class="row">
+                <div class="col-md-6 col-sm-12 main-container">
+
+
+
+
+
+        <h1>Contact us</h1>
             <h3>Fell free to call us durring working hours. Contact form is available all the time.</h3>
-            <h1>Ask us</h1>
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-            <button type="submit">Send</button>
+            <button class="btn btn-primary" type="submit">Send</button>
             </form>
 
-        <footer>
-
-            {% if request.user.is_authenticated %}
-                <p>Hello {{request.user.username}}</p>
-                <p><a href="{% url 'logout' %}">Logout</a></p>
-            {% else %}
-                <p><a href="{% url 'login' %}">Login</a></p>
-            {% endif %}
-            <p><a href="{% url 'client_start' %}"> Back </a></p>
+            </div>
+        </section>
 
 
-        </footer>
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
+
+
+
+
+
+
+

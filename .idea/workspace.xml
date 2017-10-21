@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd444cc0-968b-443a-af8f-b1f789194cee" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tires/tires_shop/static/css/contact.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/static/css/base.css" afterPath="$PROJECT_DIR$/Tires/tires_shop/static/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/static/css/contact.css" afterPath="$PROJECT_DIR$/Tires/tires_shop/static/css/contact.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/static/css/login.css" afterPath="$PROJECT_DIR$/Tires/tires_shop/static/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/all_orders.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/all_orders.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/delete_order.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/delete_order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/login.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/order.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/order.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/signup.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/signup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/contact.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/contact.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +35,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/login.css">
+      <file leaf-file-name="contact.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="456">
+              <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/base.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="470">
+              <caret line="84" column="47" lean-forward="false" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="38" column="45" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -55,6 +71,7 @@
     <findStrings>
       <find>client area</find>
       <find>zapytanie</find>
+      <find>input</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/Tires/tires_shop/templates</dir>
@@ -79,7 +96,6 @@
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/new_tire.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/new_brand.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/owner.html" />
-        <option value="$PROJECT_DIR$/Tires/tires_shop/templates/contact.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/models.py" />
         <option value="$PROJECT_DIR$/Tires/Tires/urls.py" />
         <option value="$PROJECT_DIR$/Tires/Tires/settings.py" />
@@ -91,13 +107,14 @@
         <option value="$PROJECT_DIR$/Tires/tires_shop/forms.py" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/tire_search.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/order.html" />
-        <option value="$PROJECT_DIR$/Tires/tires_shop/static/css/base.css" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/all_orders.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/delete_order.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/login.html" />
-        <option value="$PROJECT_DIR$/Tires/tires_shop/static/css/contact.css" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/signup.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/static/css/login.css" />
+        <option value="$PROJECT_DIR$/Tires/tires_shop/static/css/contact.css" />
+        <option value="$PROJECT_DIR$/Tires/tires_shop/static/css/base.css" />
+        <option value="$PROJECT_DIR$/Tires/tires_shop/templates/contact.html" />
       </list>
     </option>
   </component>
@@ -824,14 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tires/tires_shop/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -880,34 +889,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tires/Tires/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="35" column="61" lean-forward="true" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="80" column="23" lean-forward="true" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/contact.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -936,10 +921,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/contact.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="38" column="45" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="84" column="47" lean-forward="false" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
           <folding />
         </state>
       </provider>

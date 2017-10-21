@@ -82,7 +82,7 @@ button a {
     display: block !important;
 }
 
-.main-container input {
+.main-container input, .main-container textarea {
     color: black !important;
 }
 
