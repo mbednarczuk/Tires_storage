@@ -73,3 +73,25 @@ body {
 button a {
     color: white;
 }
+
+
+
+/*search section*/
+
+.main-container label {
+    display: block !important;
+}
+
+.main-container input {
+    color: black !important;
+}
+
+.searchResultsContainer {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid wheat;
+}
+
+.searchResultsContainer li {
+    list-style-type: none;
+}

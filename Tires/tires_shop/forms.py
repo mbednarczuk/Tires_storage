@@ -11,7 +11,7 @@ class LoginForm(forms.Form):
 
 
 class TireSearchForm(forms.Form):
-    brand = forms.CharField(label='Search')
+    brand = forms.CharField(label='Please fill in the type of tire')
 
 
 class NewTireForm(forms.ModelForm):
