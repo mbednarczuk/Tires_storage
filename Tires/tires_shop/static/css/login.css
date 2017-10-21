@@ -1,0 +1,21 @@
+.loginContainer {
+    margin-top: 3rem;
+    background: rgba(0,0,0,0.75);
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+}
+.mainImage {
+    background-image: url("../../media/tire_image/main.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+label {
+    display: block;
+}
+
+form {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}

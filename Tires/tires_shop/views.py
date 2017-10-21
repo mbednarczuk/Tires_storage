@@ -174,7 +174,6 @@ class BrandsDescribeDetailView(DetailView):
     model = BrandsDescribe
     template_name = 'brand_describe.html'
 
-
 class ChangePasswordView(PermissionRequiredMixin, View):
     permission_required = 'change_user'
 
