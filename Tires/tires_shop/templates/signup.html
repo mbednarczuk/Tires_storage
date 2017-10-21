@@ -2,36 +2,39 @@
 
 <html>
     <head>
-    {% load staticfiles %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
-    <meta charset="utf-8"></head>
-    <body>
-
-        <h4>{{ date }}</h4>
-        <h1>Tires</h1>
-              <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
-
-        <footer>
-
-            <h2>If You have any doubts feel free to ask : </h2>
-            <p><a href="{% url 'contact' %}"> Contact </a> </p>
-
-        </footer>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+        <meta charset="utf-8">
+    </head>
+    <body class="mainImage">
+        <div class="container">
+            <div class="row">
+                <div class="loginContainer col-md-6 col-sm-10">
+                     <h6>{{ date }}</h6>
+                     <h1>Tires Storage</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                          <p>
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                              <small style="color: grey">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% for error in field.errors %}
+                              <p style="color: red">{{ error }}</p>
+                            {% endfor %}
+                          </p>
+                        {% endfor %}
+                        <button class="btn btn-primary registerButton" type="submit">Sign up</button>
+                  </form>
+                 </div>
+            </div>
+        </div>
     </body>
 </html>
+
+
+
+

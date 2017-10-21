@@ -3,16 +3,21 @@
 {% block content %}
 
   {% for order in orders %}
-
+    <div class="ordersList">
     <li>Product to order:{{ order.order_tire }}</li>
     <li>Quantity:{{ order.quantity}}</li>
     <li>Ordering user: {{ order.user.username }}</li>
-    <p><a href="{% url 'order_delete' order.id %}"> Delete </a> </p>
+
+    <a href="{% url 'order_delete' order.id %}">
+        <button type="button" class="btn btn-danger">Delete</button>
+    </a>
+    </div>
     <br>
 
   {% endfor %}
-
-    <p><a href="{% url 'order' %}"> New order </a> </p>
+    <a href="{% url 'order' %}">
+        <button type="button" class="btn btn-primary">New Order</button>
+    </a>
 
 
 {% endblock %}

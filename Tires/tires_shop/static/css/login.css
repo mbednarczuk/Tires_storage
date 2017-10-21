@@ -24,4 +24,13 @@ form {
 
 .loginButton {
     margin-top: 1.5rem;
+    margin-right: 1rem;
+}
+
+small {
+    display: none;
+}
+
+.registerButton {
+    margin-top: 1rem;   
 }

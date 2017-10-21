@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Are You sure to delete this order?</h1>
+<h4>Are You sure to delete this order?</h4>
   <form method="post">
     {{ form.as_p }}
     {% csrf_token %}
-    <input type="submit" value="Delete">
+    <input type="submit" value="Confirm">
   </form>
-  <p><a href="{% url 'start' %}">Start page</a></p>
 
 
 {% endblock %}
