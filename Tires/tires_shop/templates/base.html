@@ -18,25 +18,31 @@
               <li class="nav-item"><a class="nav-link" href="{% url 'client_start' %}">Client area</a> </li>
               <li class="nav-item"><a class="nav-link" href="{% url 'owner_start' %}">Owner area</a> </li>
           </ul>
+
+
           <form class="form-inline my-2 my-lg-0">
               <li class="nav-item logout"><a class="nav-link" href="{% url 'logout' %}">Logout</a> </li>
     </form>
           </div>
         </nav>
-        </section>
+        <section class="container">
+           <div class="row">
+                <div class="col-md-6 col-sm-12 main-container">
+                    <div class
+                    <h4>{{ date }}</h4>
+                           {% if request.user.is_authenticated %}
+                <h1>Hello {{request.user.username}}</h1>
+                     {% block content %} {% endblock %}
 
-        <h4>{{ date }}</h4>
-        <h1>Tires</h1>
-            {% block content %} {% endblock %}
-
-        <section>
-
-            {% if request.user.is_authenticated %}
-                <p>Hello {{request.user.username}}</p>
 
             {% else %}
                 <p><a href="{% url 'login' %}">Login</a></p>
             {% endif %}
+
+                 </div>
+            </div>
+        </section>
+
 
 
 

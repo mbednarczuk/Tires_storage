@@ -23,6 +23,8 @@ body {
 
 .logout {
     float: right;
+    background: rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
 .centered {
@@ -53,4 +55,21 @@ body {
     text-decoration: none;
     color: #73efe6 !important;
     transition: all 0.5s;
+}
+
+.main-container {
+    margin-top: 5rem;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 3% !important;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.main-container h1 {
+    margin-bottom: 3rem;
+}
+
+button a {
+    color: white;
 }

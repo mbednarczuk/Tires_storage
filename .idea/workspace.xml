@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd444cc0-968b-443a-af8f-b1f789194cee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/static/css/base.css" afterPath="$PROJECT_DIR$/Tires/tires_shop/static/css/base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/static/css/login.css" afterPath="$PROJECT_DIR$/Tires/tires_shop/static/css/login.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/base.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/login.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tires/tires_shop/templates/client.html" afterPath="$PROJECT_DIR$/Tires/tires_shop/templates/client.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,14 +32,24 @@
     <favorites_list name="Project" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.59323156">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+                <state relative-caret-position="420">
+                  <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="client.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/client.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="103" lean-forward="false" selection-start-line="4" selection-start-column="103" selection-end-line="4" selection-end-column="103" />
                   <folding />
                 </state>
               </provider>
@@ -55,7 +63,7 @@
             <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/base.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="786">
-                  <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+                  <caret line="73" column="17" lean-forward="false" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -88,7 +96,6 @@
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/delete_order.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/delete_tire.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/update_tire.html" />
-        <option value="$PROJECT_DIR$/Tires/tires_shop/templates/client.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/order.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/tire_search.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/all_orders.html" />
@@ -108,8 +115,9 @@
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/tire_detail.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/views.py" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/templates/login.html" />
-        <option value="$PROJECT_DIR$/Tires/tires_shop/templates/base.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/static/css/login.css" />
+        <option value="$PROJECT_DIR$/Tires/tires_shop/templates/base.html" />
+        <option value="$PROJECT_DIR$/Tires/tires_shop/templates/client.html" />
         <option value="$PROJECT_DIR$/Tires/tires_shop/static/css/base.css" />
       </list>
     </option>
@@ -741,13 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/delete_order.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -928,18 +929,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        <state relative-caret-position="390">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/login.css">
+    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="420">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tires/tires_shop/templates/client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="103" lean-forward="false" selection-start-line="4" selection-start-column="103" selection-end-line="4" selection-end-column="103" />
           <folding />
         </state>
       </provider>
@@ -947,7 +956,7 @@
     <entry file="file://$PROJECT_DIR$/Tires/tires_shop/static/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="786">
-          <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+          <caret line="73" column="17" lean-forward="false" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
           <folding />
         </state>
       </provider>
