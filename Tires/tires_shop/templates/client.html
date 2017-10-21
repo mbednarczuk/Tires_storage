@@ -1,8 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<button type="button" class="btn btn-primary btn-lg"><a href="{% url 'szukaj' %}">Search</a></button>
-<button type="button" class="btn btn-primary btn-lg"><a href="{% url 'order' %}">New order</a></button>
+
+    <a href="{% url 'szukaj' %}">
+        <button type="button" class="btn btn-primary btn-lg">
+            Search
+        </button>
+    </a>
+
+    <a href="{% url 'order' %}">
+        <button type="button" class="btn btn-primary btn-lg">
+            New order
+        </button>
+    </a>
+
 {% endblock %}
 
 
