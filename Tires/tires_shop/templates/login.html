@@ -10,18 +10,16 @@
     <body class="mainImage">
         <div class="container">
             <div class="row">
-                <div class="loginContainer col-md-6 col-sm-12">
+                <div class="loginContainer col-md-6 col-sm-10">
                      <h6>{{ date }}</h6>
-                     <h1>Tires</h1>
+                     <h1>Tires Storage</h1>
                         <form method="post">
                             {{ form.as_p }}
                             {% csrf_token %}
-                            <input type="submit" value='Login'>
+                            <button class="loginButton btn btn-outline-primary" type="submit" value='Login'> Zaloguj </button>
                         </form>
                  </div>
             </div>
         </div>
-
-
     </body>
 </html>

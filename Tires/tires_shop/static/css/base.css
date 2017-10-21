@@ -6,14 +6,51 @@ body {
 
 }
 
-a {
-    font-family: 'Hoefler Text', Georgia, 'Times New Roman', serif;
-    font-style: italic;
-    color: darkred;
-    font-size: medium;
-
+.nav-item {
+    height: 50px !important;
+    padding: 15px 15px !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    list-style-type: none;
 }
 
+.nav-link {
+    height: 50px !important;
+    padding: 15px 15px !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+}
 
+.logout {
+    float: right;
+}
 
+.centered {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
+.mainImage {
+    background-image: url("../../media/tire_image/panel.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
+}
+
+.navbar-collapse.collapse {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.navbar a:focus, .navbar a:hover {
+    text-decoration: none;
+    color: #73efe6 !important;
+    transition: all 0.5s;
+}

@@ -9,6 +9,8 @@
     background-image: url("../../media/tire_image/main.jpg");
     background-position: center;
     background-repeat: no-repeat;
+    height: 100%;
+    background-size: cover;
 }
 
 label {
@@ -18,4 +20,8 @@ label {
 form {
     margin-top: 2rem;
     margin-bottom: 1rem;
+}
+
+.loginButton {
+    margin-top: 1.5rem;
 }

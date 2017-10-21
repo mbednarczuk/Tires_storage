@@ -9,7 +9,21 @@
 
 
     <meta charset="utf-8"></head>
-    <body>
+    <body class="mainImage">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Client Panel</a>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+              <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}"> Contact </a> </li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'client_start' %}">Client area</a> </li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'owner_start' %}">Owner area</a> </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <li class="nav-item logout"><a class="nav-link" href="{% url 'logout' %}">Logout</a> </li>
+    </form>
+          </div>
+        </nav>
+        </section>
 
         <h4>{{ date }}</h4>
         <h1>Tires</h1>
@@ -23,12 +37,8 @@
             {% else %}
                 <p><a href="{% url 'login' %}">Login</a></p>
             {% endif %}
-            <p><a href="{% url 'contact' %}"> Contact </a> </p>
-            <p><a href="{% url 'client_start' %}">Client area</a></p>
-            <p><a href="{% url 'owner_start' %}">Owner area</a></p>
-            <p><a href="{% url 'logout' %}">Logout</a></p>
 
-        </section>
+
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
