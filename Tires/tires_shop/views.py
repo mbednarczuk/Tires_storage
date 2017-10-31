@@ -50,7 +50,7 @@ class Login(View):
                 login(request, user)
                 return HttpResponseRedirect(reverse('start'))
             else:
-                return HttpResponse('Niepoprawne dane logowania')
+                return HttpResponse('Wrong data to login')
 
 
 class Logout(View):
